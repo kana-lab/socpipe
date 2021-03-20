@@ -54,12 +54,14 @@ def add(a,b):
 ```
 そして、`ApiServer`インスタンスを作り、あなたのAPIを他のプロセスに公開します。  
 ```
-# in process2
+# in process1
 
 from socpipe import *
-api=ApiCient(port=50007)
-print(api.add(1,2))
-# 3 will be displayed
+api=ApiServer(apis=[add])
+api.publish(port=50007)
+
+while True:
+  pass
 ```
 ここで、`port`は内部で`socket`によって使われるポート番号であり、好きな番号をセットして構いません。  
 `api.publish`が実行されると、新しいスレッドが生成され他のプロセスからの接続を待つようになります。  
