@@ -1,6 +1,6 @@
 # overview
 `soctype` provides very simple ways of inter-process communication.  
-This only uses `socket`,`json` and `threading` internally, which are standard modules.  
+This only uses `socket`,`json`, and `threading` internally, which are standard modules.  
 # installation
 `pip install socpipe` or `pip3 install socpipe`  
 # usage
@@ -22,8 +22,8 @@ api.publish(port=50007)
 while True:
   pass
 ```
-where `port` is the port number which will be used by `socket` internally, and you can set whatever number you like.  
-After `api.publish` is executed, new thread will be generated and wait connections.  
+where `port` is the port number that will be used by `socket` internally, and you can set whatever number you like.  
+After `api.publish` is executed, a new thread will be generated and wait for connections.  
 So you need to prevent process1 from exiting by `while True` or setting `run_forever` parameter of `publish` True.  
 
 Let's move on to process2.  
@@ -38,7 +38,6 @@ print(api.add(1,2))
 ```
 By the way, `publish` and `ApiClient` also has a parameter `host`, so you can communicate with remote hosts by setting this parameter.  
 I haven't tested this function, though.
-
 # 概要
 `socpipe`はプロセス間通信のための大変シンプルな関数を提供します。  
 このモジュールは内部で標準モジュールである`socket`,`json`,`threading`のみを使用しています。  
