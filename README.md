@@ -1,5 +1,5 @@
 # overview
-`soctype` provides very simple ways of inter-process communication.  
+`socpipe` provides very simple ways of inter-process communication.  
 This only uses `socket`,`json`, and `threading` internally, which are standard modules.  
 # installation
 `pip install socpipe` or `pip3 install socpipe`  
